@@ -19,7 +19,11 @@ public class GreetingResource {
         long result = 0;
         long begin = System.currentTimeMillis();
         for (int i = 0; i < iterate; i++) {
-            int a = Arrays.stream(values).map(x -> x + 1).map(x -> x * 2).map(x -> x + 2).reduce(0, Integer::sum);
+            int a = Arrays.stream(values)
+                        .map(x -> x + 1)
+                        .map(x -> x * 2)
+                        .map(x -> x + 2)
+                        .reduce(0, Integer::sum);
             result += a;
         }
         long processTime = System.currentTimeMillis() - begin;
